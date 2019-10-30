@@ -1,0 +1,21 @@
+/* Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than
+or equal to num.*/
+function sumOddFibonacciNums(num: number): number {
+	let result = 0;
+	let previous = 0;
+	let current = 1;
+	
+	while(current <= num){
+		if(current % 2 !== 0){
+			result += current;
+		}
+		
+		const nextCurrent = current + previous;
+		previous = current;
+		current = nextCurrent;
+	}
+	
+	return result;
+}
+
+console.log(sumOddFibonacciNums(1000)); // 1785
